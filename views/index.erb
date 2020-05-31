@@ -1,0 +1,22 @@
+<article>
+  <h2>メモの一覧</h2>
+  <ul class="memos">
+    <% if @filenames.empty? %>
+      <li><%= "メモがありません。今すぐメモを作成しましょう💪" %></li>
+    <% else @filenames.each do |filename| %>
+      <li>
+        <span class="title">
+          <a href="/<%= filename %>"><%= filename %></a>
+        </span>
+        <span class="buttons">
+          <a href="/edit/<%= filename %>"><button><i class="far fa-edit"></i>編集</button></a>
+          <form action="/<%= filename %>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button onclick="return confirm('本当に削除してよろしいですか？')"><i class="far fa-trash-alt"></i>削除</button>
+          </form>
+        </span>
+      </li>
+    <% end %>
+    <% end %>
+  </ul>
+</article>

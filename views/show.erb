@@ -1,0 +1,13 @@
+<article>
+  <h2>メモの内容</h2>
+  <p class="content"><%= esc_html(@content) %></p>
+  <ul class="buttons">
+    <li><a href="/edit/<%= @filename %>"><button><i class="far fa-edit"></i>編集</button></a></li>
+    <li>
+      <form action="/<%= @filename %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <button onclick="return confirm('本当に削除してよろしいですか？')"><i class="far fa-trash-alt"></i>削除</button>
+      </form>
+    </li>
+  </ul>
+</article>

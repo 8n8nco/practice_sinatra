@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <%= erb :head %>
+  <body>
+    <div class="wrapper">
+      <%= erb :header %>
+      <main role="main">
+        <%= yield %>
+      </main>
+      <%= erb :footer %>
+    </div>
+  </body>
+</html>
